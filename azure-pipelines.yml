@@ -9,7 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 strategy:
-  python.version: '3.7'
   #matrix:
   #  Python27:
   #    python.version: '2.7'
@@ -22,6 +21,7 @@ strategy:
 
 steps:
 - task: UsePythonVersion@0
+  python.version: '3.7'
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
